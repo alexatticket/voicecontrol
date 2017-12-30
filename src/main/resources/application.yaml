@@ -18,3 +18,6 @@ commandConfig:
     -
       match: "DECREASE VOLUME"
       shellCommand: "/usr/bin/osascript -e 'set volume output volume (output volume of (get volume settings) -10)'"
+    -
+      match: "START BOLIBOMPA"
+      shellCommand: "/usr/bin/open https://www.svt.se/barnkanalen/barnplay/bolibompa"

@@ -41,7 +41,7 @@ public class SpeechInputHandler {
 					.filter(c -> StringUtils.equalsAnyIgnoreCase(utterance, c.getMatch()))
 					.findFirst()
 					.ifPresent(Command::execute);
-			if (StringUtils.startsWithIgnoreCase(utterance, "EXIT")) {
+			if (StringUtils.startsWithIgnoreCase(utterance, "EXIT VOICECONTROL")) {
 				break;
 			}
 		}
