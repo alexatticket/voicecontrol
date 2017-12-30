@@ -38,7 +38,7 @@ public class SpeechInputHandler {
 			String utterance = result.getHypothesis();
 			System.out.println(utterance);
 			commandConfig.getCommands().stream()
-					.filter(c -> StringUtils.contains(utterance, c.getMatch()))
+					.filter(c -> StringUtils.equalsAnyIgnoreCase(utterance, c.getMatch()))
 					.findFirst()
 					.ifPresent(Command::execute);
 			if (StringUtils.startsWithIgnoreCase(utterance, "EXIT")) {
