@@ -1,0 +1,20 @@
+commandConfig:
+  shellCommands:
+    -
+      match: "OPEN SPOTIFY"
+      shellCommand: "/usr/bin/osascript -e 'tell application \"Spotify\" to launch'"
+    -
+      match: "PLAY MUSIC"
+      shellCommand: "/usr/bin/osascript -e 'tell application \"Spotify\" to playpause'"
+    -
+      match: "STOP MUSIC"
+      shellCommand: "/usr/bin/osascript -e 'tell application \"Spotify\" to playpause'"
+    -
+      match: "NEXT TRACK"
+      shellCommand:  "/usr/bin/osascript -e 'tell application \"Spotify\" to next track'"
+    -
+      match: "INCREASE VOLUME"
+      shellCommand: "/usr/bin/osascript -e 'set volume output volume (output volume of (get volume settings) +10)'"
+    -
+      match: "DECREASE VOLUME"
+      shellCommand: "/usr/bin/osascript -e 'set volume output volume (output volume of (get volume settings) -10)'"
