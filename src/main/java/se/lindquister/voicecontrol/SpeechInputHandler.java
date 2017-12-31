@@ -30,22 +30,26 @@ public class SpeechInputHandler {
 
 	private void startRecognizer() throws IOException {
 		LiveSpeechRecognizer recognizer = createRecognizer();
-
 		recognizer.startRecognition(true);
 
-		while (true) {
-			SpeechResult result = recognizer.getResult();
-			String utterance = result.getHypothesis();
-			System.out.println(utterance);
-			commandConfig.getCommands().stream()
-					.filter(c -> StringUtils.equalsAnyIgnoreCase(utterance, c.getMatch()))
-					.findFirst()
-					.ifPresent(Command::execute);
-			if (StringUtils.startsWithIgnoreCase(utterance, "EXIT VOICECONTROL")) {
-				break;
+		try {
+			while (true) {
+				SpeechResult result = recognizer.getResult();
+				String utterance = result.getHypothesis();
+				System.out.println(utterance);
+
+				commandConfig.getCommands().stream()
+						.filter(c -> StringUtils.equalsAnyIgnoreCase(utterance, c.getMatch()))
+						.findFirst()
+						.ifPresent(Command::execute);
+				if (StringUtils.startsWithIgnoreCase(utterance, "EXIT VOICECONTROL")) {
+					break;
+				}
+
 			}
+		} finally {
+			recognizer.stopRecognition();
 		}
-		recognizer.stopRecognition();
 	}
 
 	private LiveSpeechRecognizer createRecognizer() throws IOException {

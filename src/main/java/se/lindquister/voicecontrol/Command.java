@@ -1,7 +1,17 @@
 package se.lindquister.voicecontrol;
 
-interface Command {
-	void execute();
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-	String getMatch();
+@Getter
+@Setter
+@NoArgsConstructor
+public abstract class Command {
+
+	private String match;
+
+	abstract void execute();
+
+
 }

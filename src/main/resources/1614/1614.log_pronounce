@@ -2,6 +2,7 @@ pronounce: verbosity is 1
 BOLIBOMPA - By LtoS rules
 DECREASE - Main 
 EXIT - Main 
+FORECAST - Main 
 INCREASE - Main 
 MUSIC - Main 
 NEXT - Main 
@@ -13,4 +14,5 @@ STOP - Main
 TRACK - Main 
 VOICECONTROL - Morpheme: VOICE CONTROL 
 VOLUME - Main 
+WEATHER - Main 
 

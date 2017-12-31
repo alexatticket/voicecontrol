@@ -21,3 +21,8 @@ commandConfig:
     -
       match: "START BOLIBOMPA"
       shellCommand: "/usr/bin/open https://www.svt.se/barnkanalen/barnplay/bolibompa"
+  weatherForecastCommands:
+    -
+      match: "WEATHER FORECAST"
+      longitude: "18.068"
+      latitude: "59.329"

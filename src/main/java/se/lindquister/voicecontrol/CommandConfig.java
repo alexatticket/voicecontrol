@@ -16,8 +16,12 @@ import java.util.Set;
 public class CommandConfig {
 
 	private List<ShellCommand> shellCommands;
+	private List<WeatherForecastCommand> weatherForecastCommands;
 
 	public Set<Command> getCommands() {
-		return new HashSet<>(shellCommands);
+		Set<Command> commands = new HashSet<>();
+		commands.addAll(weatherForecastCommands);
+		commands.addAll(shellCommands);
+		return commands;
 	}
 }

@@ -9,14 +9,9 @@ import java.io.IOException;
 @NoArgsConstructor
 @Getter
 @Setter
-public class ShellCommand implements Command {
-	private String match;
-	private String shellCommand;
+public class ShellCommand extends Command {
 
-	@Override
-	public String getMatch() {
-		return match;
-	}
+	private String shellCommand;
 
 	public void execute() {
 		String[] command = {"/bin/bash", "-c", shellCommand};
